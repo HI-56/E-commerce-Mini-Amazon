@@ -19,7 +19,11 @@ class Products {
             float price,
             int stock
     );
+        
 
+        int getStock();
+        void decreaseStock(int qty);
+        void increaseStock(int qty);
         virtual void display() = 0;
 
         virtual float similarityScore() = 0;
