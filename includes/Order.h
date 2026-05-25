@@ -16,7 +16,7 @@ private:
     vector<Products*> products;
 
     float totalPrice;
-    float tva;
+    float tva ;
     float finalPrice;
 
 public:
@@ -34,7 +34,7 @@ public:
 
     void confirmOrder();    
 
-    ~Order();
+    ~Order(){};
 };
 
 #endif

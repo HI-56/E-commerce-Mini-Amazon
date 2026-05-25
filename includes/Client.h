@@ -31,7 +31,7 @@ class Clients{
     void displayHistory();
     void addToHistory(Products* pro);
 
-    ~Clients();
+    ~Clients(){};
 };
 
 #endif 

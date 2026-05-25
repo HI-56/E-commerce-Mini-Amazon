@@ -22,6 +22,8 @@ class Products {
         
 
         int getStock();
+        int getId();
+        float getPrice();
         void decreaseStock(int qty);
         void increaseStock(int qty);
         virtual void display() = 0;
