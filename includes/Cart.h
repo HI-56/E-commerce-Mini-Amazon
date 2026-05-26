@@ -14,12 +14,14 @@ public:
 
     Cart();
     void addProduct(Products* product);
-
+    vector<Products*> getProducts() ;
     void removeProduct(int id);
 
     float calculateTotal();
 
     void displayCart();
+
+    void clearCart() ;
 
     ~Cart(){};
 

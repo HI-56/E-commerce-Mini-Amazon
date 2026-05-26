@@ -22,6 +22,7 @@ void CategoryDisplay(){
     cout<<"3- Food \n" ;
     cout<<"0- All \n" ;
     cout<<"==================\n";
+    cout<<"Chose a Category (1,2,3) / 0 for all categorys: \t" ;
 }
 
 void chowProducts( vector<Products*> products){
@@ -53,4 +54,22 @@ Products* FindById(vector<Products*> products , int Id) {
         }
     }
     return nullptr  ;
+}
+
+void PlaceOrder(Order* order , Clients* client ,vector<Products*> CartProducts ){
+    for(auto* pro : CartProducts){
+        order->addProduct(pro) ;
+        client->addToHistory(pro) ;
+    }
+}
+
+
+void DisplayOrderHistory(vector<Clients*> clients ){
+    for(auto* clt : clients){
+        cout<<"client\'s ID :\t" << clt->getId() <<"\n" ;
+        cout<<"client\'s Name :\t" << clt->getName() <<"\n" ;
+        cout<<"client\'s Email :\t" << clt->getEmail() <<"\n" ;
+        cout<<"client\'s History:\n" ;
+        clt->displayHistory() ;
+    }
 }

@@ -23,7 +23,6 @@ class Clients{
     int getId();
     string getName();
     string getEmail();
-
     void setId(int id );
     void setName(string name);
     void setEmail(string email);

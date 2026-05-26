@@ -14,6 +14,16 @@ void Order::addProduct(Products* product){
     this->products.push_back(product) ;
 }
 
+
+void Order::setOrderId( int id) {
+    this->orderId = id ;
+}
+    void Order::setClient(Clients* client) {
+        this->client = client ;
+    }
+
+
+
 void Order::calculateTotal(){
     for(auto* pro : products){
         this->totalPrice += pro->getPrice() ;
@@ -22,6 +32,7 @@ void Order::calculateTotal(){
     this->finalPrice = this->totalPrice + this->tva ;
 } 
 void Order::displayOrder(){
+    cout<<"Order ID :" <<this->orderId ;
     for(auto* pro : products){
         pro->display();
     }
@@ -44,4 +55,8 @@ void Order::confirmOrder(){
         
     }
 
+}
+
+void Order::clearCart() {
+    this->products.clear();  
 }

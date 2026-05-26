@@ -39,3 +39,10 @@ void Cart::displayCart(){
     cout<<"\n=== The Total Price is : ===\n"<<"Price : \t"<<this->calculateTotal()<<"DH"<<endl ;
 };
 
+vector<Products*> Cart::getProducts(){
+    return this->products ;
+}
+
+void Cart::clearCart() {
+    this->products.clear();  
+}

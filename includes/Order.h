@@ -15,9 +15,9 @@ private:
     Clients* client;
     vector<Products*> products;
 
-    float totalPrice;
-    float tva ;
-    float finalPrice;
+    float totalPrice = 0;
+    float tva =0 ;
+    float finalPrice =0;
 
 public:
 
@@ -28,8 +28,11 @@ public:
     // actions
     void addProduct(Products* product);
 
+    void setOrderId( int id) ;
+    void setClient(Clients* client) ;
     void calculateTotal();   
 
+    void clearCart() ;
     void displayOrder();
 
     void confirmOrder();    

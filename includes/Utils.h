@@ -21,7 +21,10 @@ void chowProducts(vector<Products*> products) ;
 
 void DisplayMenu() ;
 
+void DisplayOrderHistory(vector<Clients*> clients );
+
 Products* FindById(vector<Products*> products , int Id) ;
 
+void PlaceOrder(Order* order , Clients* client ,vector<Products*> CartProducts ) ;
 
 #endif 
