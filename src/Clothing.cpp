@@ -16,13 +16,14 @@ Clothing::Clothing(
     }
 
 void Clothing::display(){
-    cout<< "\n-- Clothing Category : -- \n" ;
+    
     cout<< "\nProducts ID : "<<this->id<<"\n" ;
     cout<< "\nProducts Name : "<<this->name<<"\n" ;
     cout<< "\nProducts size : "<<this->size<<"\n" ;
     cout<< "\nProducts color : "<<this->color<<"\n" ;
-    cout<< "\nProducts Price : "<<this->price<<"\n" ;
+    cout<< "\nProducts Price : "<<this->price<<" DH\n" ;
     cout<< "\nIn stock: "<<this->stock<<"\n" ;
+    cout<< "\n--------------------------\n";
 }
 
 float Clothing::similarityScore(){

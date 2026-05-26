@@ -14,12 +14,13 @@ Electronic::Electronic(
     }
 
 void Electronic::display(){
-    cout<< "\n-- Clothing Category : -- \n" ;
+    
     cout<< "\nProducts ID : "<<this->id<<"\n" ;
     cout<< "\nProducts Name : "<<this->name<<"\n" ;
     cout<< "\nProducts brand: "<<this->brand<<"\n" ;
-    cout<< "\nProducts Price : "<<this->price<<"\n" ;
+    cout<< "\nProducts Price : "<<this->price<<" DH\n" ;
     cout<< "\nIn stock: "<<this->stock<<"\n" ;
+    cout<< "\n--------------------------\n";
 }
 
 float Electronic::similarityScore(){

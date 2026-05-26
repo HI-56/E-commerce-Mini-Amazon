@@ -5,6 +5,7 @@ using namespace std ;
 
 
 Cart::Cart(){
+    
 }
 
 void Cart::addProduct(Products* product){
@@ -37,4 +38,3 @@ void Cart::displayCart(){
     cout<<"\n-- the total price is : --\n"<<"price : \t"<<this->calculateTotal()<<"DH"<<endl ;
 };
 
-Cart::~Cart(){}

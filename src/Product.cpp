@@ -25,7 +25,7 @@ void Products::increaseStock(int qty){
     this->stock += qty ;
 }
 void Products::decreaseStock(int qty){
-    if(this->stock >= qty)
+    if(this->stock > qty)
         this->stock -= qty;
 }
 

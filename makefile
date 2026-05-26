@@ -9,7 +9,6 @@ SRC = src/main.cpp \
       src/Client.cpp \
       src/Cart.cpp \
       src/Order.cpp \
-      src/Stock.cpp \
       src/RecommendationEngine.cpp \
       src/Utils.cpp
 

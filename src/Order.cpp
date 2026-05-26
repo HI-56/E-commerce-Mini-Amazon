@@ -37,7 +37,7 @@ void Order::confirmOrder(){
     
     for(auto* pro : products){
         if(pro->getStock() == 0){
-            cout<<"the product of the ID : "<<pro->getId() << "is no longr availible"<<endl ;
+            cout<<"the product of the ID : "<<pro->getId() << "is no longer available"<<endl ;
         }else{
             pro->decreaseStock(1);
         }
