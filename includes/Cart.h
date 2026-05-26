@@ -13,7 +13,6 @@ private:
 public:
 
     Cart();
-
     void addProduct(Products* product);
 
     void removeProduct(int id);

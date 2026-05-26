@@ -39,7 +39,7 @@ void Order::confirmOrder(){
         if(pro->getStock() == 0){
             cout<<"the product of the ID : "<<pro->getId() << "is no longer available"<<endl ;
         }else{
-            pro->decreaseStock(1);
+            pro->decreaseStock();
         }
         
     }

@@ -16,11 +16,11 @@ Food::Food(
 void Food::display(){
     
     cout<< "\nProducts ID : "<<this->id<<"\n" ;
-    cout<< "\nProducts Name : "<<this->name<<"\n" ;
-    cout<< "\nProducts brand: "<<this->brand<<"\n" ;
-    cout<< "\nProducts Price : "<<this->price<<" DH\n" ;
-    cout<< "\nIn stock: "<<this->stock<<"\n" ;
-    cout<< "\n--------------------------\n";
+    cout<< "Products Name : "<<this->name<<"\n" ;
+    cout<< "Products brand: "<<this->brand<<"\n" ;
+    cout<< "Products Price : "<<this->price<<" DH\n" ;
+    cout<< "In stock: "<<this->stock<<"\n" ;
+    cout<< "--------------------------\n";
 }
 
 float Food::similarityScore(){

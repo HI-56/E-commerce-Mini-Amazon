@@ -20,6 +20,7 @@ void CategoryDisplay() ;
 void chowProducts(vector<Products*> products) ;
 
 void DisplayMenu() ;
+
 Products* FindById(vector<Products*> products , int Id) ;
 
 

@@ -16,10 +16,12 @@ void AddFood(vector<Products*>& Food ,Products* pro){
 
 
 void CategoryDisplay(){
-    cout<<"\n Cathegorys :\n" ;
-    cout<<"\n1- Clothing .\n" ;
-    cout<<"\n2- Electronic .\n" ;
-    cout<<"\n3- Food .\n" ;
+    cout<<"\n=== Cathegorys ===\n" ;
+    cout<<"1- Clothing \n" ;
+    cout<<"2- Electronic \n" ;
+    cout<<"3- Food \n" ;
+    cout<<"0- All \n" ;
+    cout<<"==================\n";
 }
 
 void chowProducts( vector<Products*> products){
@@ -34,7 +36,7 @@ void DisplayMenu(){
     cout << "       MINI AMAZON STORE        \n";
     cout << "================================\n";
     cout << "  1. Display Products       \n";
-    cout << "  2. Add Product to Cart        \n";
+    cout << "  2. Add Products to Cart        \n";
     cout << "  3. Remove Product from Cart   \n";
     cout << "  4. View Cart                  \n";
     cout << "  5. Place Order                \n";

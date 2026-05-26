@@ -8,6 +8,7 @@ Products::Products(int id, string name, float price, int stock){
     this->name = name ;
     this->price = price ;
     this->stock = stock ;
+    this->qty = 1 ;
 }
 
 int Products::getStock(){
@@ -20,12 +21,17 @@ int Products::getId(){
 float Products::getPrice(){
     return this->price;
 }
-
-void Products::increaseStock(int qty){
-    this->stock += qty ;
+void Products::setQty(int qty){
+    this->qty = qty ;
 }
-void Products::decreaseStock(int qty){
-    if(this->stock > qty)
-        this->stock -= qty;
+int Products::getQty(){
+    return this->qty ;
+}
+void Products::increaseStock(){
+    this->stock += this->qty ;
+}
+void Products::decreaseStock(){
+    if(this->stock > this->qty)
+        this->stock -= this->qty;
 }
 

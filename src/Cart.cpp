@@ -13,9 +13,9 @@ void Cart::addProduct(Products* product){
 }
 
 void Cart::removeProduct(int id) {
-    for (auto i = products.begin(); i != products.end(); i++) {
+    for (auto i = this->products.begin(); i != this->products.end(); i++) {
         if ((*i)->getId() == id) {
-            products.erase(i); 
+            this->products.erase(i); 
             return;
         }
     }
@@ -25,16 +25,17 @@ void Cart::removeProduct(int id) {
 float Cart::calculateTotal(){
     float total = 0 ;
 
-    for(auto* pro : products ){
-        total += pro->getPrice() ;
+    for(auto* pro : this->products ){
+        total += pro->getPrice() * pro->getQty() ;
     }
     return total ;
 }
 
 void Cart::displayCart(){
-    for(auto* pro : products ){
+    for(auto* pro : this->products ){
         pro->display() ;
+        cout<<"Quantity :"<< pro->getQty() <<"\n";
     }
-    cout<<"\n-- the total price is : --\n"<<"price : \t"<<this->calculateTotal()<<"DH"<<endl ;
+    cout<<"\n=== The Total Price is : ===\n"<<"Price : \t"<<this->calculateTotal()<<"DH"<<endl ;
 };
 

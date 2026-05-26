@@ -11,6 +11,7 @@ class Products {
         string name;
         float price;
         int stock;
+        int qty = 1;
 
     public:
         Products(
@@ -23,9 +24,11 @@ class Products {
 
         int getStock();
         int getId();
+        void setQty(int qty) ;
+        int getQty();
         float getPrice();
-        void decreaseStock(int qty);
-        void increaseStock(int qty);
+        void decreaseStock();
+        void increaseStock();
         virtual void display() = 0;
 
         virtual float similarityScore() = 0;

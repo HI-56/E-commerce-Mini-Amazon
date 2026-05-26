@@ -10,6 +10,8 @@
 using namespace std ;
 
 int main(){
+// the cart ;    
+Cart* cart = new Cart();
 // declaring the categorys tables ;    
 vector<Products*> Clothings  ;
 vector<Products*> Electronics ;
@@ -39,6 +41,7 @@ AddFood(Foods , new Food(303, "Coca Cola", 1.99, 100, "Coca Cola"));
 
 while(true){
     int choice ;
+    
     // display the menu 
     DisplayMenu() ;
     cin>>choice ;
@@ -87,9 +90,12 @@ while(true){
     case 2:
     {
         int ProId ;
+        int qty ;
         Products* foundedPro  = nullptr;
-        cout <<"\nEnter Product\'s ID :\t " ;
+        cout <<"\nEnter Product\'s ID :\t" ;
         cin >> ProId ;
+        cout <<"\nEnter quantity :\t" ;
+        cin >>qty;
         if(ProId < 200){
             foundedPro = FindById(Clothings ,ProId) ;
         }else if(ProId > 200 && ProId < 300){
@@ -98,9 +104,10 @@ while(true){
             foundedPro = FindById(Foods ,ProId) ;
         }
 
-        Cart cart ;
+        
         if(foundedPro != nullptr){
-            cart.addProduct(foundedPro) ;
+            foundedPro->setQty(qty) ;
+            cart->addProduct(foundedPro) ;
         }else{
             cout<<"\n No product found match the ID !!!\n" ;
         }
@@ -109,20 +116,42 @@ while(true){
         
         break;
     case 3:
-        
+        {
+            int ProdId ;
+            Products* deletedPro  = nullptr;
+            cout <<"\nEnter Product\'s ID you want to delete:\t" ;
+            cin >> ProdId ;
+
+            if(ProdId < 200){
+                deletedPro = FindById(Clothings ,ProdId) ;
+            }else if(ProdId > 200 && ProdId < 300){
+                deletedPro = FindById(Electronics ,ProdId) ;
+            }else {
+                deletedPro = FindById(Foods ,ProdId) ;
+            }
+            
+            if(deletedPro != nullptr){
+                cart->removeProduct(ProdId) ;
+            }
+            
+        }
         break;
     case 4:
-        
+        cout<<"\n========== Cart detail =========\n" ;
+        cart->displayCart() ;
+        cout<<"\n================================\n" ;
         break;
     case 5:
-        
+        {
+            //// im here now 
+        }
         break;
     case 6:
         
         break;
     case 0:
+        return 0 ;
         
-        break;
     default:
     cout<<"\nInvalid choice !!\n" ;
     cout<<"\nEnter a valid numbre :\n" ;

@@ -18,12 +18,12 @@ Clothing::Clothing(
 void Clothing::display(){
     
     cout<< "\nProducts ID : "<<this->id<<"\n" ;
-    cout<< "\nProducts Name : "<<this->name<<"\n" ;
-    cout<< "\nProducts size : "<<this->size<<"\n" ;
-    cout<< "\nProducts color : "<<this->color<<"\n" ;
-    cout<< "\nProducts Price : "<<this->price<<" DH\n" ;
-    cout<< "\nIn stock: "<<this->stock<<"\n" ;
-    cout<< "\n--------------------------\n";
+    cout<< "Products Name : "<<this->name<<"\n" ;
+    cout<< "Products size : "<<this->size<<"\n" ;
+    cout<< "Products color : "<<this->color<<"\n" ;
+    cout<< "Products Price : "<<this->price<<" DH\n" ;
+    cout<< "In stock: "<<this->stock<<"\n" ;
+    cout<< "--------------------------\n";
 }
 
 float Clothing::similarityScore(){
