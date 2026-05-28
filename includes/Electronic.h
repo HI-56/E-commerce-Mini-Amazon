@@ -2,6 +2,7 @@
 #define ELECTRONIC
 #include<iostream>
 #include<string>
+#include<vector>
 #include<Product.h>
 using namespace std ;
 
@@ -18,10 +19,10 @@ class Electronic : public Products{
             int stock ,
             string brand
     ) ;
-
+    string getBrand();
     void display() override ;
 
-    float similarityScore() override;
+    float similarityScore(vector<Products*> cart) override;
 
     ~Electronic(){} ;
     

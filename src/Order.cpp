@@ -24,10 +24,11 @@ void Order::setOrderId( int id) {
 
 
 void Order::calculateTotal(){
-    
+    float total = 0 ;
     for(auto* pro : products){
-        totalPrice += pro->getPrice() * pro->getQty() ;
+        total += pro->getPrice() * pro->getQty() ;
     }
+    this->totalPrice  = total ;
     if(this->totalPrice >= 10000 && this->totalPrice < 20000){
         reduction = this->totalPrice * 0.15 ;
         cout<<"\ncongratulation you win a reduction of 15%\n";
@@ -39,7 +40,8 @@ void Order::calculateTotal(){
     this->finalPrice = (this->totalPrice + this->tva) - reduction ;
 } 
 void Order::displayOrder(){
-    cout<<"Order ID :" <<this->orderId ;
+    cout<<"\nOrder ID :" <<this->orderId<<"\n" ;
+    cout<<"________________________________\n";
     for(auto* pro : products){
         cout<<"\n Product name   :      "<<pro->getName()<<"\n" ;
         cout<<" Product price    :      "<<pro->getPrice()<<"\n" ;

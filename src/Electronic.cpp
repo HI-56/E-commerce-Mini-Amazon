@@ -23,7 +23,17 @@ void Electronic::display(){
     cout<< "In stock: "<<this->stock<<"\n" ;
     cout<<"-----------------------------------------------\n";
 }
+string Electronic::getBrand(){
+    return this->brand ;
+}
 
-float Electronic::similarityScore(){
-    return 0.5 ;
+float Electronic::similarityScore(vector<Products*> cart){
+    float score = 0;
+    for(auto* pro : cart){
+        Electronic* elec = dynamic_cast<Electronic*>(pro) ;
+        if(elec != nullptr){
+            if(elec->getBrand() == this->brand) score +=0.3 ;
+        }
+    }
+    return  score  ;
 }

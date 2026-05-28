@@ -2,6 +2,7 @@
 #define FOOD
 #include<iostream>
 #include<string>
+#include<vector>
 #include<Product.h>
 using namespace std ;
 
@@ -19,9 +20,10 @@ class Food : public Products{
             string brand
     ) ;
 
+    string getBrand();
     void display() override ;
 
-    float similarityScore() override;
+    float similarityScore(vector<Products*> cart) override;
 
     ~Food(){} ;
     

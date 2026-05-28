@@ -2,6 +2,7 @@
 #define CLOTHING
 #include<iostream>
 #include<string>
+#include<vector>
 #include<Product.h>
 using namespace std ;
 
@@ -20,10 +21,11 @@ class Clothing : public Products{
             string size,
             string color
     ) ;
-
+    string getSize() ;
+    string getColor() ;
     void display() override ;
 
-    float similarityScore() override;
+    float similarityScore(vector<Products*> cart) override;
 
     ~Clothing(){} ;
     

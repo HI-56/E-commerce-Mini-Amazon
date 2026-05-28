@@ -31,6 +31,9 @@ void Products::setQty(int qty){
 int Products::getQty(){
     return this->qty ;
 }
+string Products::getCategory(){
+    return this->category ;
+}
 void Products::increaseStock(){
     this->stock += this->qty ;
 }

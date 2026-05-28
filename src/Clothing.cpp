@@ -26,8 +26,23 @@ void Clothing::display(){
     cout<< "In stock: "<<this->stock<<"\n" ;
     cout<<"-----------------------------------------------\n";
 }
+    string Clothing::getSize(){
+        return this->size ;
+    }
+    string Clothing::getColor() {
+        return this->color ;
+    }
 
-float Clothing::similarityScore(){
-    return 0.9 ;
+float Clothing::similarityScore(vector<Products*> cart){
+    float score = 0;
+    
+    for(auto* pro : cart){
+        Clothing* cloth = dynamic_cast<Clothing*>(pro) ;
+        if(cloth != nullptr){
+            if(cloth->getSize() == this->size) score +=0.2 ;
+            if(cloth->getColor() == this->color) score +=0.3 ;
+        }
+    }
+    return  score  ;        
 }
 

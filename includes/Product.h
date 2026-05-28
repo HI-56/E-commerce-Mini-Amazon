@@ -1,6 +1,7 @@
 #ifndef PRODUCTS
 #define PRODUCTS
 #include<iostream>
+#include<vector>
 #include<string>
 using namespace std ;
 
@@ -29,12 +30,14 @@ class Products {
         void stockAlert() ;
         int getQty();
         float getPrice();
+        string getCategory();
         string getName();
         void decreaseStock();
         void increaseStock();
+
         virtual void display() = 0;
 
-        virtual float similarityScore() = 0;
+        virtual float similarityScore(vector<Products*> cart) = 0;
 
         virtual ~Products(){} ;
 };

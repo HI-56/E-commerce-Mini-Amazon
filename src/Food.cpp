@@ -14,6 +14,10 @@ Food::Food(
         this->category = "Food" ;
     }
 
+string Food::getBrand(){
+    return this->brand ;
+}
+
 void Food::display(){
     
     cout<< "\nProducts ID : "<<this->id<<"\n" ;
@@ -24,6 +28,14 @@ void Food::display(){
     cout<<"-----------------------------------------------\n";
 }
 
-float Food::similarityScore(){
-    return 0.2 ;
+float Food::similarityScore(vector<Products*> cart){
+    float score = 0;
+    for(auto* pro : cart){
+        Food* fo = dynamic_cast<Food*>(pro) ;
+        if(fo != nullptr){
+            if(fo->getBrand() == this->brand) score +=0.3 ;
+        }
+    }
+    return  score  ;
 }
+
