@@ -1,0 +1,18 @@
+# Compiled files
+*.o
+*.exe
+*.out
+
+# Build output
+mini_amazon
+mini_amazon.exe
+
+# VS Code
+.vscode/
+
+# MinGW / compiler temp files
+*.d
+
+# OS files
+.DS_Store
+Thumbs.db
