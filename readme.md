@@ -4,6 +4,7 @@ A C++ console application simulating an online shopping platform with product ma
 
 ---
 
+
 ## 📁 Project Structure
 mini_amazon/
 ├── includes/
@@ -30,6 +31,19 @@ mini_amazon/
 ├── makefile
 ├── README.md
 └── .gitignore
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
