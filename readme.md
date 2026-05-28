@@ -31,20 +31,6 @@ mini_amazon/
 ├── makefile
 ├── README.md
 └── .gitignore
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 
 ## ✨ Features
