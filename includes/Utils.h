@@ -27,4 +27,6 @@ Products* FindById(vector<Products*> products , int Id) ;
 
 void PlaceOrder(Order* order , Clients* client ,vector<Products*> CartProducts ) ;
 
+void alertMSG(vector<Products*> Pro) ;
+
 #endif 

@@ -14,7 +14,7 @@ private:
     int orderId;
     Clients* client;
     vector<Products*> products;
-
+    float reduction = 0;
     float totalPrice = 0;
     float tva =0 ;
     float finalPrice =0;
@@ -31,8 +31,7 @@ public:
     void setOrderId( int id) ;
     void setClient(Clients* client) ;
     void calculateTotal();   
-
-    void clearCart() ;
+    void clearOrder() ;
     void displayOrder();
 
     void confirmOrder();    

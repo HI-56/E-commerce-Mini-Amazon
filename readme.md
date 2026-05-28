@@ -28,7 +28,8 @@ mini_amazon/
 │   ├── RecommendationEngine.cpp
 │   └── Utils.cpp
 ├── makefile
-└── README.md
+├── README.md
+└── .gitignore
 
 ---
 

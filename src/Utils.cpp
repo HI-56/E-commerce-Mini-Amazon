@@ -34,17 +34,17 @@ void chowProducts( vector<Products*> products){
 void DisplayMenu(){
     cout << "\n";
     cout << "================================\n";
-    cout << "       MINI AMAZON STORE        \n";
+    cout << "=      MINI AMAZON STORE       =\n";
     cout << "================================\n";
-    cout << "  1. Display Products       \n";
-    cout << "  2. Add Products to Cart        \n";
-    cout << "  3. Remove Product from Cart   \n";
-    cout << "  4. View Cart                  \n";
-    cout << "  5. Place Order                \n";
-    cout << "  6. View Order History         \n";
-    cout << "  0. Exit                       \n";
+    cout << "= 1. Display Products          =\n";
+    cout << "= 2. Add Products to Cart      =\n";
+    cout << "= 3. Remove Product from Cart  =\n";
+    cout << "= 4. View Cart                 =\n";
+    cout << "= 5. Place Order               =\n";
+    cout << "= 6. View Order History        =\n";
+    cout << "= 0. Exit                      =\n";
     cout << "================================\n";
-    cout << "Enter your choice: \t";
+    cout << "-> Enter your choice: \t";
 }
 
 Products* FindById(vector<Products*> products , int Id) {
@@ -63,7 +63,6 @@ void PlaceOrder(Order* order , Clients* client ,vector<Products*> CartProducts )
     }
 }
 
-
 void DisplayOrderHistory(vector<Clients*> clients ){
     for(auto* clt : clients){
         cout<<"client\'s ID :\t" << clt->getId() <<"\n" ;
@@ -71,5 +70,11 @@ void DisplayOrderHistory(vector<Clients*> clients ){
         cout<<"client\'s Email :\t" << clt->getEmail() <<"\n" ;
         cout<<"client\'s History:\n" ;
         clt->displayHistory() ;
+    }
+}
+
+void alertMSG(vector<Products*> Products){
+    for(auto* pro : Products ){
+        pro->stockAlert() ;
     }
 }

@@ -23,40 +23,43 @@ void Order::setOrderId( int id) {
     }
 
 
-
 void Order::calculateTotal(){
+    
     for(auto* pro : products){
-        this->totalPrice += pro->getPrice() ;
+        totalPrice += pro->getPrice() * pro->getQty() ;
+    }
+    if(this->totalPrice >= 10000 && this->totalPrice < 20000){
+        reduction = this->totalPrice * 0.15 ;
+        cout<<"\ncongratulation you win a reduction of 15%\n";
+    }else if(this->totalPrice >= 20000){
+        reduction = this->totalPrice * 0.25 ;
+        cout<<"\ncongratulation you win a reduction of 25%\n";
     }
     this->tva = this->totalPrice * 0.2 ;
-    this->finalPrice = this->totalPrice + this->tva ;
+    this->finalPrice = (this->totalPrice + this->tva) - reduction ;
 } 
 void Order::displayOrder(){
     cout<<"Order ID :" <<this->orderId ;
     for(auto* pro : products){
-        pro->display();
+        cout<<"\n Product name   :      "<<pro->getName()<<"\n" ;
+        cout<<" Product price    :      "<<pro->getPrice()<<"\n" ;
+        cout<<" Quantity to order:      "<<pro->getQty()<<"\n" ;
     }
-    cout << "\n-- the total price before TVA is : --\n"
-         << "price : \t"
-         << this->totalPrice
-         << " DH" << endl;
-    cout <<"\n TVA value is :\t" << this->tva <<endl;
-    cout <<"\n Final price is :\t"<< this->finalPrice <<endl;
+        cout<<"\n-- the total price before TVA is : --"
+            <<"\n Price :\t           "<< this->totalPrice<< " DH" << endl;
+        cout<<"\n Reduction value is : \t" << this->reduction<<endl;
+        cout<<"\n TVA value is       :  \t" << this->tva <<endl;
+        cout<<"\n Final price is     :\t"<< this->finalPrice <<endl;
 }
 
 void Order::confirmOrder(){
     
-    for(auto* pro : products){
-        if(pro->getStock() == 0){
-            cout<<"the product of the ID : "<<pro->getId() << "is no longer available"<<endl ;
-        }else{
+    for(auto* pro : this->products){
             pro->decreaseStock();
-        }
-        
     }
 
 }
 
-void Order::clearCart() {
+void Order::clearOrder() {
     this->products.clear();  
 }

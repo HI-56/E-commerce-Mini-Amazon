@@ -13,6 +13,7 @@ Clothing::Clothing(
     ):Products(id ,name ,price ,stock){
         this->size = size ;
         this->color = color ;
+        this->category = "Clothing" ;
     }
 
 void Clothing::display(){
@@ -23,7 +24,7 @@ void Clothing::display(){
     cout<< "Products color : "<<this->color<<"\n" ;
     cout<< "Products Price : "<<this->price<<" DH\n" ;
     cout<< "In stock: "<<this->stock<<"\n" ;
-    cout<< "--------------------------\n";
+    cout<<"-----------------------------------------------\n";
 }
 
 float Clothing::similarityScore(){

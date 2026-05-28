@@ -11,6 +11,7 @@ class Products {
         string name;
         float price;
         int stock;
+        string category ;
         int qty = 1;
 
     public:
@@ -25,8 +26,10 @@ class Products {
         int getStock();
         int getId();
         void setQty(int qty) ;
+        void stockAlert() ;
         int getQty();
         float getPrice();
+        string getName();
         void decreaseStock();
         void increaseStock();
         virtual void display() = 0;

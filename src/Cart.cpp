@@ -9,7 +9,13 @@ Cart::Cart(){
 }
 
 void Cart::addProduct(Products* product){
-    this->products.push_back(product) ;
+    if(product->getStock() < product->getQty()){
+        cout<<"\nNo enough quanity in stock for the product \""<< product->getName()<<"\"\n" ;
+        cout << " Stock :  " <<  product->getStock() ;
+    }else{
+        this->products.push_back(product) ;
+    }
+    
 }
 
 void Cart::removeProduct(int id) {
@@ -33,10 +39,11 @@ float Cart::calculateTotal(){
 
 void Cart::displayCart(){
     for(auto* pro : this->products ){
-        pro->display() ;
-        cout<<"Quantity :"<< pro->getQty() <<"\n";
+        cout<<"\nProduct name   :      "<<pro->getName()<<"\n" ;
+        cout<<"Product price    :      "<<pro->getPrice()<<"\n" ;
+        cout<<"Quantity to order:      "<<pro->getQty()<<"\n" ;
     }
-    cout<<"\n=== The Total Price is : ===\n"<<"Price : \t"<<this->calculateTotal()<<"DH"<<endl ;
+    cout<<"\n== The Total Price is : ==\n"<<"Price : \t"<<this->calculateTotal()<<"DH"<<endl ;
 };
 
 vector<Products*> Cart::getProducts(){

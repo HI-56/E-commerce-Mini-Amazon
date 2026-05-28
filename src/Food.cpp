@@ -11,6 +11,7 @@ Food::Food(
             string brand
     ):Products(id ,name ,price ,stock){
         this->brand = brand ;
+        this->category = "Food" ;
     }
 
 void Food::display(){
@@ -20,7 +21,7 @@ void Food::display(){
     cout<< "Products brand: "<<this->brand<<"\n" ;
     cout<< "Products Price : "<<this->price<<" DH\n" ;
     cout<< "In stock: "<<this->stock<<"\n" ;
-    cout<< "--------------------------\n";
+    cout<<"-----------------------------------------------\n";
 }
 
 float Food::similarityScore(){

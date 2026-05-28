@@ -21,6 +21,10 @@ int Products::getId(){
 float Products::getPrice(){
     return this->price;
 }
+string Products::getName(){
+    return this->name;
+}
+
 void Products::setQty(int qty){
     this->qty = qty ;
 }
@@ -30,8 +34,15 @@ int Products::getQty(){
 void Products::increaseStock(){
     this->stock += this->qty ;
 }
+void Products::stockAlert(){
+    if( this->getStock()<= 5){
+        cout<< "\nWARRNING : " << "the stock of the product\""
+            <<this->getName()<<"\" in category \""
+            <<this->category<<"\" is under 5 \n"  ;
+    }
+}
 void Products::decreaseStock(){
-    if(this->stock > this->qty)
+    if(this->stock >= this->qty)
         this->stock -= this->qty;
 }
 

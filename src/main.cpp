@@ -40,12 +40,11 @@ AddFood(Foods , new Food(303, "Coca Cola", 1.99, 100, "Coca Cola"));
 
 // done fulling stock ;
 
-
-
-
 while(true){
+    alertMSG(Clothings );
+    alertMSG(Electronics );
+    alertMSG(Foods );
     int choice ;
-    
     // display the menu 
     DisplayMenu() ; // function in Utils.cpp
     cin>>choice ;
@@ -98,12 +97,20 @@ while(true){
     case 2:
     //this case for Add Products to Cart 
     {
+        while(true){
+        int addProduct ;
+        cout <<"\n 1 - Add products \t" ;
+        cout <<"\n 0 - Back to menu \t" ;
+        cout <<"\n-> Enter (1/0) :\t" ;
+        cin>>addProduct ;
+
+        if(addProduct == 1){
         int ProId ;
         int qty ;
         Products* foundedPro  = nullptr;
-        cout <<"\nEnter Product\'s ID :\t" ;
+        cout <<"\n-> Enter Product\'s ID :\t" ;
         cin >> ProId ;
-        cout <<"\nEnter quantity :\t" ;
+        cout <<"\n-> Enter quantity :\t" ;
         cin >>qty;
         // Route search to the correct category based on ID range
         // 1xx → Clothing | 2xx → Electronic | 3xx → Food
@@ -122,10 +129,14 @@ while(true){
         }else{
             cout<<"\n No product found match the ID !!!\n" ;
         }
+        }else{
+            break;
+        }
         
     }
-        
         break;
+    }
+        
     case 3:
     //this case for Remove Product from Cart
         {
@@ -159,7 +170,11 @@ while(true){
         cout<<"\n================================\n" ;
         break;
     case 5:
-        {
+        
+            if (cart->getProducts().size() == 0 ){
+                cout << "No products in cart. Cannot place order." << endl;
+                break ;
+            }else{
             int id ;
             string name ;
             string email ;
@@ -180,7 +195,7 @@ while(true){
             Clients* client = new Clients(id, name, email);
             clients.push_back(client) ;
             // emplier the order ;
-           PlaceOrder(order ,client ,cart->getProducts() ) ;
+           PlaceOrder(order ,client ,cart->getProducts()) ;
            cart->clearCart() ; // Clear cart after placing products into order ;
            order->setClient(client) ;
            order->setOrderId(rand() % 900 + 100) ; //rand() % 900 + 100; give a random number between 100 and 999 ;
@@ -196,13 +211,16 @@ while(true){
            cin>> confirm ;
            if(confirm == 1){
             order->confirmOrder() ;
-            order->clearCart() ;
+            order->clearOrder() ;
            }else{
-            return;
+            order->clearOrder() ;
+            clients.pop_back(); // if client didnt confirm I delete the last client info 
+            break;
            }
            cout<<"===============================================\n" ;
-        }
         break;
+            }
+            
     case 6:
         cout<<"=============== Order History ================\n" ;
             DisplayOrderHistory(clients); //function in Utils.cpp
@@ -213,7 +231,7 @@ while(true){
         
     default:
     cout<<"\nInvalid choice !!\n" ;
-    cout<<"\nEnter a valid numbre :\n" ;
+    cout<<"\nEnter a valid choice :\n" ;
         break;
     }
 

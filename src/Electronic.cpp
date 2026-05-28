@@ -11,6 +11,7 @@ Electronic::Electronic(
             string brand
     ):Products(id ,name ,price ,stock){
         this->brand = brand ;
+        this->category = "Electronic" ;
     }
 
 void Electronic::display(){
@@ -20,7 +21,7 @@ void Electronic::display(){
     cout<< "Products brand: "<<this->brand<<"\n" ;
     cout<< "Products Price : "<<this->price<<" DH\n" ;
     cout<< "In stock: "<<this->stock<<"\n" ;
-    cout<< "--------------------------\n";
+    cout<<"-----------------------------------------------\n";
 }
 
 float Electronic::similarityScore(){

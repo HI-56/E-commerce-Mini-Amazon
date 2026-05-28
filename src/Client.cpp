@@ -39,7 +39,9 @@ void Clients::setEmail(string email){
 
 void Clients::displayHistory(){
     for (auto* pro : cartHistory) {
-        pro->display() ;
+        cout<<"\n Product name   :      "<<pro->getName()<<"\n" ;
+        cout<<" Product price    :      "<<pro->getPrice()<<"\n" ;
+        cout<<" Quantity ordered :      "<<pro->getQty()<<"\n" ;
     }
 }
 void Clients::addToHistory(Products* pro){
