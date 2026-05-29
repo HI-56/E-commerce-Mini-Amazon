@@ -91,6 +91,7 @@ cmake --build build
 ---
 
 ## 🏗️ Class Structure
+```bash
 Products (base)
 ├── Clothing   (size, color)
 ├── Electronic (brand)
@@ -98,7 +99,7 @@ Products (base)
 Cart        → manages products before order
 Order       → confirmed purchase with TVA
 Clients     → client info + order history
-
+```
 ---
 
 ## 👨‍💻 Author
