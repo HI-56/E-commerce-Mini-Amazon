@@ -139,7 +139,7 @@ while(true){
         // 1xx → Clothing | 2xx → Electronic | 3xx → Food
         if(ProId < 200){
             foundedPro = FindById(Clothings ,ProId) ;// in Utils.cpp 
-        }else if(ProId > 200 && ProId < 300){
+        }else if(ProId >= 200 && ProId < 300){
             foundedPro = FindById(Electronics ,ProId) ;// in Utils.cpp 
         }else {
             foundedPro = FindById(Foods ,ProId) ;// in Utils.cpp 
@@ -172,7 +172,7 @@ while(true){
             // 1xx → Clothing | 2xx → Electronic | 3xx → Food
             if(ProdId < 200){
                 deletedPro = FindById(Clothings ,ProdId) ;
-            }else if(ProdId > 200 && ProdId < 300){
+            }else if(ProdId >= 200 && ProdId < 300){
                 deletedPro = FindById(Electronics ,ProdId) ;
             }else {
                 deletedPro = FindById(Foods ,ProdId);

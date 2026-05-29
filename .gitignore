@@ -1,4 +1,5 @@
 # Compiled files
+build/
 *.o
 *.exe
 *.out
