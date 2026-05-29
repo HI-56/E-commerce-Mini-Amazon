@@ -6,7 +6,9 @@ A C++ console application simulating an online shopping platform with product ma
 
 
 ## 📁 Project Structure
+```bash
 mini_amazon/
+│
 ├── includes/
 │   ├── Product.h
 │   ├── Clothing.h
@@ -17,6 +19,7 @@ mini_amazon/
 │   ├── Clients.h
 │   ├── RecommendationEngine.h
 │   └── Utils.h
+│
 ├── src/
 │   ├── main.cpp
 │   ├── Product.cpp
@@ -28,9 +31,11 @@ mini_amazon/
 │   ├── Clients.cpp
 │   ├── RecommendationEngine.cpp
 │   └── Utils.cpp
-├── makefile
+│
+├── CMakeLists.txt
 ├── README.md
 └── .gitignore
+```
 ---
 
 ## ✨ Features
@@ -53,15 +58,11 @@ mini_amazon/
 
 ## 🚀 How to Run
 
-### Compile:
-### Option 1 - Using Makefile (recommended):
+### Configure the project:
 ```bash
-make
-```
+cmake -S . -B build
 
-### Option 2 - Manual compile:
-```bash
-g++ -Wall -Wextra -std=c++23 -Iincludes src/main.cpp src/Product.cpp src/Electronic.cpp src/Food.cpp src/Clothing.cpp src/Client.cpp src/Cart.cpp src/Order.cpp src/RecommendationEngine.cpp src/Utils.cpp -o mini_amazon
+cmake --build build
 ```
 
 ### Run:
